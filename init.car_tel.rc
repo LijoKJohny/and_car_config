@@ -96,6 +96,7 @@ on boot
     setprop persist.sys.strictmode.disable 1
     # workaround for h.265 slowness
     setprop sys.media.vdec.drop 0
+    ifconfig eth0 192.168.100.4 up
 
 service wpa_supplicant /vendor/bin/hw/wpa_supplicant -dd \
     -iwlan0 -Dnl80211 -c/data/misc/wifi/wpa_supplicant.conf \

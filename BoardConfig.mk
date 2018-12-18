@@ -57,7 +57,7 @@ USE_OPENGL_RENDERER := true
 NUM_FRAMEBUFFER_SURFACE_BUFFERS ?= 3
 
 #Camera
-USE_CAMERA_STUB := true
+USE_CAMERA_STUB := false
 
 # Build OpenGLES emulation host and guest libraries. May be not required.
 #BUILD_EMULATOR_OPENGL := true
@@ -85,6 +85,9 @@ BOARD_SEPOLICY_DIRS += build/target/board/generic/sepolicy
 BOARD_HOSTAPD_DRIVER := NL80211
 BOARD_WPA_SUPPLICANT_DRIVER := NL80211
 WPA_SUPPLICANT_VERSION := VER_2_1_DEVEL
+
+#GPS
+BOARD_HAS_GPS_HARDWARE := true
 
 # Disable Jack build system due deprecated status (https://source.android.com/source/jack)
 ANDROID_COMPILE_WITH_JACK := false

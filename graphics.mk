@@ -128,6 +128,32 @@ PRODUCT_PACKAGES += \
     libRSCpuRef \
     libRScpp \
 
+# Sensor libraries
+PRODUCT_PACKAGES += \
+    sensors.hdaps \
+    sensors.iio-old \
+    sensors.kbd \
+    sensors.s103t \
+    sensors.w500 \
+    sens \
+    activity_recognition.iio \
+    activity \
+    sensors.iio \
+
+# GPS libraries
+PRODUCT_PACKAGES += \
+    gps.default \
+    gps.huawei \
+
+# Camera
+PRODUCT_PACKAGES += \
+    camera.arm64 \
+
+# Bluetoogh
+PRODUCT_PACKAGES += \
+    android.hardware.bluetooth@1.0-service.btlinux \
+    rtk_hciattach \
+
 # Dumpstate HAL
 PRODUCT_PACKAGES += \
     android.hardware.dumpstate@1.0-service 

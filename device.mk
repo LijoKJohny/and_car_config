@@ -133,10 +133,11 @@ PRODUCT_PACKAGES += \
     libvideoeditorplayer \
 
 PRODUCT_PACKAGES += \
-    audio.primary.default \
+    audio.primary.arm64 \
+    audio.primary.hdmi \
     local_time.default \
     vibrator.default \
-    power.default
+    power.arm64 \
 
 PRODUCT_COPY_FILES += \
     frameworks/av/media/libeffects/data/audio_effects.conf:system/etc/audio_effects.conf
@@ -154,11 +155,25 @@ PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml \
-    device/generic/goldfish/camera/media_codecs.xml:system/etc/media_codecs.xml
+    device/generic/goldfish/camera/media_codecs.xml:system/etc/media_codecs.xml \
+    frameworks/av/media/libstagefright/data/media_codecs_ffmpeg.xml:system/etc/media_codecs_ffmpeg.xml \
 
+# Stagefright FFMPEG plugins
+PRODUCT_PACKAGES += \
+    libffmpeg_extractor \
+    libffmpeg_omx \
+    media_codecs_ffmpeg.xml \
+
+# For ffmpeg
+PRODUCT_PROPERTY_OVERRIDES += \
+    media.sf.omx-plugin=libffmpeg_omx.so \
+    media.sf.extractor-plugin=libffmpeg_extractor.so \
 
 # Get some sounds
 $(call inherit-product-if-exists, frameworks/base/data/sounds/AllAudio.mk)
+
+# Get the alsa files
+$(call inherit-product-if-exists,hardware/libaudio/alsa.mk)
 
 # Get the TTS language packs
 $(call inherit-product-if-exists, external/svox/pico/lang/all_pico_languages.mk)
