@@ -47,6 +47,7 @@ PRODUCT_COPY_FILES += \
     device/generic/telxsi/car_tel/init.car_tel.rc:root/init.car_tel.rc \
     device/generic/telxsi/car_tel/ueventd.car_tel.rc:root/ueventd.car_tel.rc \
     device/generic/telxsi/car_tel/modules.blacklist:system/etc/modules.blacklist \
+    device/generic/telxsi/car_tel/init.sh:system/bin/init.sh \
 
 # copied from aosp_arm64.mk
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -64,7 +65,8 @@ PRODUCT_PACKAGES += \
     CallLogBackup \
     CellBroadcastReceiver \
     EmergencyInfo \
-    rild
+    rild \
+#    CarLauncher \
 
 # copied from build/target/product/full_base_telephony.mk
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -138,6 +140,7 @@ PRODUCT_PACKAGES += \
     local_time.default \
     vibrator.default \
     power.arm64 \
+    power.default \
 
 PRODUCT_COPY_FILES += \
     frameworks/av/media/libeffects/data/audio_effects.conf:system/etc/audio_effects.conf
@@ -157,6 +160,11 @@ PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml \
     device/generic/goldfish/camera/media_codecs.xml:system/etc/media_codecs.xml \
     frameworks/av/media/libstagefright/data/media_codecs_ffmpeg.xml:system/etc/media_codecs_ffmpeg.xml \
+    $(LOCAL_PATH)/sensor/sensor.rc:system/vendor/etc/init/sensor.rc \
+    frameworks/native/data/etc/android.hardware.sensor.barometer.xml:system/etc/permissions/android.hardware.sensor.barometer.xml \
+    frameworks/native/data/etc/android.hardware.sensor.gyroscope.xml:system/etc/permissions/android.hardware.sensor.gyroscope.xml \
+    frameworks/native/data/etc/android.hardware.sensor.light.xml:system/etc/permissions/android.hardware.sensor.light.xml \
+    frameworks/native/data/etc/android.hardware.sensor.proximity.xml:system/etc/permissions/android.hardware.sensor.proximity.xml \
 
 # Stagefright FFMPEG plugins
 PRODUCT_PACKAGES += \
@@ -166,6 +174,7 @@ PRODUCT_PACKAGES += \
 
 # For ffmpeg
 PRODUCT_PROPERTY_OVERRIDES += \
+    media.sf.hwaccel=1 \
     media.sf.omx-plugin=libffmpeg_omx.so \
     media.sf.extractor-plugin=libffmpeg_extractor.so \
 
