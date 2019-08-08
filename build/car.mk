@@ -56,7 +56,7 @@ $(call inherit-product-if-exists, external/roboto-fonts/fonts.mk)
 $(call inherit-product-if-exists, external/hyphenation-patterns/patterns.mk)
 $(call inherit-product-if-exists, frameworks/base/data/keyboards/keyboards.mk)
 $(call inherit-product-if-exists, frameworks/webview/chromium/chromium.mk)
-$(call inherit-product, device/generic/telxsi/car_tel/build/car_base.mk)
+$(call inherit-product, $(LOCAL_PATH)/car_base.mk)
 
 
 PRODUCT_PROPERTY_OVERRIDES := \

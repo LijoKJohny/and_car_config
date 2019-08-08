@@ -53,4 +53,4 @@ BOARD_SEPOLICY_DIRS += \
     device/generic/telxsi/car_tel/common/sepolicy \
     packages/services/Car/car_product/sepolicy
 
-$(call inherit-product, device/generic/telxsi/car_tel/build/car.mk)
+$(call inherit-product, $(LOCAL_PATH)/../build/car.mk)
