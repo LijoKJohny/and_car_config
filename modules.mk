@@ -31,7 +31,7 @@ CAR_TEL_MODULES:
 	mkdir -p $(TARGET_LIB_MODPROBE)
 	ln -sf ../system/lib/modules $(TARGET_LIB_MODPROBE)/modules
 	cp $(ANDROID_BUILD_TOP)/out/target/product/car_tel/obj/KERNEL_OBJ/arch/arm64/boot/Image $(ANDROID_BUILD_TOP)/out/target/product/car_tel/Kernel-car_tel
-	cp $(ANDROID_BUILD_TOP)/device/generic/telxsi/car_tel/initrd/initrd.img $(ANDROID_BUILD_TOP)/out/target/product/car_tel/initrd.img
+	cp $(ANDROID_BUILD_TOP)/device/telxsi/car_tel/initrd/initrd.img $(ANDROID_BUILD_TOP)/out/target/product/car_tel/initrd.img
 
 TARGET_KERNEL_EXT_MODULES := CAR_TEL_MODULES
 

@@ -43,11 +43,11 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 
 # Init RC files
 PRODUCT_COPY_FILES += \
-    device/generic/telxsi/car_tel/fstab.car_tel:root/fstab.car_tel \
-    device/generic/telxsi/car_tel/init.car_tel.rc:root/init.car_tel.rc \
-    device/generic/telxsi/car_tel/ueventd.car_tel.rc:root/ueventd.car_tel.rc \
-    device/generic/telxsi/car_tel/modules.blacklist:system/etc/modules.blacklist \
-    device/generic/telxsi/car_tel/init.sh:system/bin/init.sh \
+    $(LOCAL_PATH)/fstab.car_tel:root/fstab.car_tel \
+    $(LOCAL_PATH)/init.car_tel.rc:root/init.car_tel.rc \
+    $(LOCAL_PATH)/ueventd.car_tel.rc:root/ueventd.car_tel.rc \
+    $(LOCAL_PATH)/modules.blacklist:system/etc/modules.blacklist \
+    $(LOCAL_PATH)/init.sh:system/bin/init.sh \
 
 # copied from aosp_arm64.mk
 PRODUCT_PROPERTY_OVERRIDES += \
